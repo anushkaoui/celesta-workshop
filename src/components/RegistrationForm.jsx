@@ -14,7 +14,7 @@ export default function RegistrationForm({ formData, setFormData, validations })
 
                 <div>
                     <label style={{ display: 'block', marginBottom: '0.4rem', fontWeight: '600', fontSize: '0.9rem' }}>Full Name *</label>
-                    <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="Anushka Gupta" style={{ width: '100%', padding: '0.6rem', border: '1px solid #cbd5e1', borderRadius: '6px', boxSizing: 'border-box' }} />
+                    <input type="text" name="fullName" value={formData.fullName} onChange={handleChange} placeholder="Name" style={{ width: '100%', padding: '0.6rem', border: '1px solid #cbd5e1', borderRadius: '6px', boxSizing: 'border-box' }} />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -22,7 +22,7 @@ export default function RegistrationForm({ formData, setFormData, validations })
                         <label style={{ display: 'block', marginBottom: '0.4rem', fontWeight: '600', fontSize: '0.9rem' }}>
                             Email Address * {formData.email && (isEmailValid ? <span style={{ color: '#16a34a' }}>✓</span> : <span style={{ color: '#dc2626', fontSize: '0.8rem' }}>(Invalid)</span>)}
                         </label>
-                        <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="anushka@iitp.ac.in" style={{ width: '100%', padding: '0.6rem', border: `1px solid ${formData.email ? (isEmailValid ? '#16a34a' : '#dc2626') : '#cbd5e1'}`, borderRadius: '6px', boxSizing: 'border-box' }} />
+                        <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="xyz@iitp.ac.in" style={{ width: '100%', padding: '0.6rem', border: `1px solid ${formData.email ? (isEmailValid ? '#16a34a' : '#dc2626') : '#cbd5e1'}`, borderRadius: '6px', boxSizing: 'border-box' }} />
                     </div>
                     <div>
                         <label style={{ display: 'block', marginBottom: '0.4rem', fontWeight: '600', fontSize: '0.9rem' }}>
