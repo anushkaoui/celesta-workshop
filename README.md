@@ -1,16 +1,131 @@
-# React + Vite
+Phase 1: Registration Form (Frontend)
+Personal Details
+Full Name (required)
+Email (required)
+Mobile Number (required)
+Institute/College (required)
+City/State (required)
+Workshop
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Use a dropdown:
 
-Currently, two official plugins are available:
+Workshop Applying For *
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+▼ Artificial Intelligence
+▼ Ethical Hacking
+▼ Drone Technology
+▼ Full Stack Development
+▼ Arduino Course
+▼ Autonomous Robotics
+▼ Generative AI
+▼ Internet of Things
+IIT Patna Student?
+Are you an IIT Patna Student?
 
-## React Compiler
+○ Yes
+○ No
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+If Yes
 
-## Expanding the Oxlint configuration
+Roll Number *
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+appears.
+
+Accommodation
+
+If IITP Student == No
+
+Do you require accommodation?
+
+○ Yes
+○ No
+
+If IITP Student == Yes
+
+Hide this section completely, or display:
+
+Accommodation
+Not Required (IIT Patna students)
+Phase 2: Live Fee Calculator
+
+Don't make users calculate anything.
+
+Display something like
+
+Registration Summary
+
+Workshop Fee             ₹1200
+IITP Discount           -₹XXX
+Accommodation            ₹YYY
+GST                     ₹ZZZ
+
+--------------------------
+Final Amount            ₹1234
+
+Whenever the user changes
+
+IITP Student
+Accommodation
+
+the values should instantly update.
+
+In React, this is simply derived state—not stored state.
+
+Phase 3: Validation
+
+Examples:
+
+Email format
+Mobile = 10 digits
+Roll number required if IITP
+Accommodation cannot be selected if IITP
+Workshop required
+
+Disable Submit until valid.
+
+Phase 4: Payment
+
+After Submit
+
+↓
+
+Create registration
+
+↓
+
+Open payment gateway
+
+↓
+
+Payment Success
+
+↓
+
+Save registration
+
+↓
+
+Generate Registration ID
+
+↓
+
+Confirmation page
+
+Phase 5: Confirmation
+
+After payment
+
+Display
+
+Registration Successful!
+
+Registration ID:
+WS2026-00152
+
+Workshop:
+Artificial Intelligence
+
+Amount Paid:
+₹1416
+
+A confirmation email has been sent.
