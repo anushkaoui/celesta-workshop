@@ -2,7 +2,7 @@
 
 An independent, single-page React application built with Vite for managing student registrations for the Celesta 2026 National Workshop Series. The application handles everything from dynamic details collection to active form validation, a live billing calculation engine, and a simulated payment gateway handshake sequence.
 
-Live Link: *(Paste your Vercel deployment URL here)*
+Live Link: https://celesta-workshop.vercel.app/
 
 ---
 
