@@ -57,7 +57,7 @@ export default function App() {
     <div style={{ maxWidth: '750px', margin: '2rem auto', padding: '0 1rem', fontFamily: 'system-ui, sans-serif', color: '#1e293b' }}>
       <header style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
         <h1 style={{ fontSize: '2.25rem', fontWeight: '800', color: '#0f172a', marginBottom: '0.5rem' }}>Celesta 2026</h1>
-        <p style={{ color: '#64748b', margin: 0, fontSize: '1.1rem' }}>National Workshop Series Registration</p>
+        <p style={{ color: '#64748b', margin: 0, fontSize: '1.1rem' }}> Workshop Registration</p>
       </header>
 
       <main>
