@@ -8,9 +8,24 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+
+# Next.js build outputs and caches (CRITICAL)
+.next
+out
+
+# Next.js auto-generated TypeScript file
+next-env.d.ts
+
+# Vite build outputs (Safe to keep if you have old Vite files)
 dist
 dist-ssr
+
+# Environment variables
+.env*.local
 *.local
+
+# Vercel deployment folder (if you deploy there later)
+.vercel
 
 # Editor directories and files
 .vscode/*
