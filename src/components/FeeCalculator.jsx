@@ -1,4 +1,6 @@
-export default function FeeCalculator({ formData, feeSummary }) {
+"use client";
+
+export default function FeeCalculator({ formValues, feeSummary }) {
     const { baseFee, discount, accommodationFee, gst, finalAmount } = feeSummary;
 
     return (
@@ -8,7 +10,7 @@ export default function FeeCalculator({ formData, feeSummary }) {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.95rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: '#64748b' }}>
                     <span>Selected Track:</span>
-                    <span style={{ fontWeight: '600', color: '#0f172a' }}>{formData.workshop || 'None chosen yet'}</span>
+                    <span style={{ fontWeight: '600', color: '#0f172a' }}>{formValues.workshop || 'None chosen yet'}</span>
                 </div>
 
                 <hr style={{ border: 'none', borderTop: '1px solid #e2e8f0', margin: '0.25rem 0' }} />
@@ -25,7 +27,7 @@ export default function FeeCalculator({ formData, feeSummary }) {
                     </div>
                 )}
 
-                {formData.isIITP === 'no' && accommodationFee > 0 && (
+                {formValues.isIITP === 'no' && accommodationFee > 0 && (
                     <div style={{ display: 'flex', justifyContent: 'space-between', color: '#0f172a' }}>
                         <span>Campus Housing Stay Fee</span>
                         <span>+₹{accommodationFee}</span>
