@@ -54,16 +54,3 @@ Generates a persistent success screen hosting transaction metadata and credentia
 
 ---
 
-## 💻 Local Development Setup
-
-Follow these commands to clone, initialize dependencies, and spin up a local copy of this environment:
-
-```bash
-# Navigate into your local directory workspace
-cd "celesta workshop"
-
-# Install project dependencies
-npm install
-
-# Start up the local Vite development web server
-npm run dev
