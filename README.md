@@ -1,131 +1,69 @@
-Phase 1: Registration Form (Frontend)
-Personal Details
-Full Name (required)
-Email (required)
-Mobile Number (required)
-Institute/College (required)
-City/State (required)
-Workshop
+# Celesta 2026 - Workshop Registration System
 
-Use a dropdown:
+An independent, single-page React application built with Vite for managing student registrations for the Celesta 2026 National Workshop Series. The application handles everything from dynamic details collection to active form validation, a live billing calculation engine, and a simulated payment gateway handshake sequence.
 
-Workshop Applying For *
+Live Link: *(Paste your Vercel deployment URL here)*
 
-▼ Artificial Intelligence
-▼ Ethical Hacking
-▼ Drone Technology
-▼ Full Stack Development
-▼ Arduino Course
-▼ Autonomous Robotics
-▼ Generative AI
-▼ Internet of Things
-IIT Patna Student?
-Are you an IIT Patna Student?
+---
 
-○ Yes
-○ No
+## 🚀 Features & Phase Breakdowns
 
-If Yes
+### Phase 1: Dynamic Registration Form
+Collects vital user parameters with contextual interface adjustments based on student status:
+*   **Personal Details Required:** Full Name, Email, Mobile Number, Institute/College, and City/State.
+*   **Workshop Track Dropdown:** Toggle select between technical tracks (AI, Ethical Hacking, Drone Technology, Full Stack, Arduino, Autonomous Robotics, Generative AI, or IoT).
+*   **Contextual UI Rendering:** 
+    *   Selecting **IIT Patna Student = Yes** dynamically reveals a required *Roll Number* input field and overrides the housing configuration.
+    *   Selecting **IIT Patna Student = No** safely hides the roll field and opens an *Accommodation Request* selector toggle.
 
-Roll Number *
+### Phase 2: Live Derived-State Fee Calculator
+An instant-update billing counter that eliminates manual processing errors. This runs entirely as **derived state** inside React, recalculating on-the-fly during active state cycles:
+*   **Base Workshop Fee:** ₹1,200
+*   **IITP Discount:** Applied instantly if institutional criteria are satisfied.
+*   **Accommodation Fee:** Injected transparently for non-IITP campus stays if toggled.
+*   **Statutory Taxation:** Computes 18% GST accurately over the adjusted subtotal.
 
-appears.
+### Phase 3: Comprehensive Validation Gatekeeper
+Ensures submission payloads match strict validation formulas before allowing form completion. The final submit trigger is explicitly disabled until all following conditions evaluate to `true`:
+*   Valid non-empty text strings for Name, College, and Location.
+*   Standard RFC 5322 regex validation on Email structure.
+*   Strict 10-digit number limitation check on Mobile entries.
+*   Enforced mandatory Roll Number strings if registered as an internal student.
 
-Accommodation
+### Phase 4: Payment Gateway Simulation Bridge
+Gracefully coordinates backend routing handshakes inside an isolated framework:
+1.  **Form Submission Initiated:** Intercepts click handler state.
+2.  **Gateway Handshake:** Mounts an interactive loading state sequence replicating server token synchronization.
+3.  **Transaction Ledger Entry:** Simulates external bank confirmation callbacks.
+4.  **Token Generation:** Authorizes code generation to construct a secure alpha-numeric Registration ID.
 
-If IITP Student == No
+### Phase 5: Ticket Pass Generation & Confirmation
+Generates a persistent success screen hosting transaction metadata and credential tags:
+*   Displays a prominent successful execution checkmark status badge.
+*   Renders a finalized transactional pass detailing the customized Registration ID format (e.g., `WS2026-XXXXX`).
+*   Informs the user that an official receipt confirmation email has been dispatched.
 
-Do you require accommodation?
+---
 
-○ Yes
-○ No
+## 🛠️ Tech Stack & Architecture
 
-If IITP Student == Yes
+*   **Core Engine:** React 18+ (Functional Components with Hooks)
+*   **Bundler & Hot Reloading:** Vite (Fast, optimized development lifecycle)
+*   **State Implementation:** Pure derived state paradigms for live multi-variable mathematical summaries to avoid state syncing artifacts.
+*   **Architecture Pattern:** Component isolation (Separation of Concerns). App routing logic, data capture schemas, calculations, and execution displays are broken down into self-contained modules inside `src/components/`.
 
-Hide this section completely, or display:
+---
 
-Accommodation
-Not Required (IIT Patna students)
-Phase 2: Live Fee Calculator
+## 💻 Local Development Setup
 
-Don't make users calculate anything.
+Follow these commands to clone, initialize dependencies, and spin up a local copy of this environment:
 
-Display something like
+```bash
+# Navigate into your local directory workspace
+cd "celesta workshop"
 
-Registration Summary
+# Install project dependencies
+npm install
 
-Workshop Fee             ₹1200
-IITP Discount           -₹XXX
-Accommodation            ₹YYY
-GST                     ₹ZZZ
-
---------------------------
-Final Amount            ₹1234
-
-Whenever the user changes
-
-IITP Student
-Accommodation
-
-the values should instantly update.
-
-In React, this is simply derived state—not stored state.
-
-Phase 3: Validation
-
-Examples:
-
-Email format
-Mobile = 10 digits
-Roll number required if IITP
-Accommodation cannot be selected if IITP
-Workshop required
-
-Disable Submit until valid.
-
-Phase 4: Payment
-
-After Submit
-
-↓
-
-Create registration
-
-↓
-
-Open payment gateway
-
-↓
-
-Payment Success
-
-↓
-
-Save registration
-
-↓
-
-Generate Registration ID
-
-↓
-
-Confirmation page
-
-Phase 5: Confirmation
-
-After payment
-
-Display
-
-Registration Successful!
-
-Registration ID:
-WS2026-00152
-
-Workshop:
-Artificial Intelligence
-
-Amount Paid:
-₹1416
-
-A confirmation email has been sent.
+# Start up the local Vite development web server
+npm run dev
